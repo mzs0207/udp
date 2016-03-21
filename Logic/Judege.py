@@ -5,7 +5,7 @@
 
 
 def judge_start(dataes, biaozhun):
-    length = len(dataes)
+    length = len(dataes) - 1
     sheng_pei = dataes[length]['sheng']
     ping_pei = dataes[length]['ping']
     fu_pei = dataes[length]['fu']
@@ -108,9 +108,9 @@ def judge_pre_after(dataes,biaozhun):
     fuDown = 0
     fuUDP = 0
 
-    length = len(dataes)
+    length = len(dataes) - 1
     while length > 0:
-        if dataes[length]['sheng'] - dataes[length - 1] > biaozhun:
+        if dataes[length]['sheng'] - dataes[length - 1]['sheng'] > biaozhun:
             shengUp += 1
         else:
             shengDown += 1

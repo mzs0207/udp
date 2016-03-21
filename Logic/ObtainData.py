@@ -10,7 +10,7 @@ def obtain_html(url):
         response = br.open(url)
         html = response.read()
         br.close()
-        return html.decode("gbk")
+        return html.decode('gbk')
     except Exception, e:
         br.close()
         print e
