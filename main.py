@@ -2,6 +2,7 @@
 # coding:utf8
 from Logic.ObtainData import *
 from Logic.MatchTableParser import *
+from Logic.select import *
 
 import datetime
 import time
