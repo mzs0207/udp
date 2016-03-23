@@ -2,13 +2,16 @@
 # coding:utf8
 # udp判断方法
 # 用开盘赔率进行对比
-
+import  sys
 
 def judge_start(dataes, biaozhun):
     length = len(dataes) - 1
+
     sheng_pei = dataes[length]['sheng']
     ping_pei = dataes[length]['ping']
     fu_pei = dataes[length]['fu']
+
+
 
     sheng_up = 0
     sheng_down = 0
@@ -18,7 +21,7 @@ def judge_start(dataes, biaozhun):
 
     fu_up = 0
     fu_down = 0
-
+    # print 'length:',length
     while length > 0:
         if sheng_pei - dataes[length -1]['sheng']>biaozhun:
             sheng_up += 1
@@ -34,12 +37,16 @@ def judge_start(dataes, biaozhun):
             fu_up += 1
         else:
             fu_down += 1
+        length -= 1
 
-        sheng_udp=sheng_up - sheng_down
-        ping_udp=ping_up - ping_down
-        fu_udp=fu_up - fu_down
+    #print 'sheng_up:', sheng_up, 'sheng_down:', sheng_down
+    #print 'ping_up:', ping_up, 'ping_down:', ping_down
+    #print 'fu_up:', fu_up, 'fu_down:',fu_down
+    sheng_udp=sheng_up - sheng_down
+    ping_udp=ping_up - ping_down
+    fu_udp=fu_up - fu_down
 
-        return sheng_udp, ping_udp, fu_udp
+    return sheng_udp, ping_udp, fu_udp
 
 
 # 使用平均赔率

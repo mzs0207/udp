@@ -3,9 +3,9 @@
 
 
 def reverse_cmp(m, n):
-    if m['udp'] < n['udp']:
-        return -1
     if m['udp'] > n['udp']:
+        return -1
+    if m['udp'] < n['udp']:
         return 1
     return 0
 

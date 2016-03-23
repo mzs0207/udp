@@ -29,6 +29,13 @@ class tableParser(HTMLParser):
             if self.tdIndex == 5 and data.strip():
                 self.peilv['fu']=float(data.strip())
 
+            if self.tdIndex == 6 and data.strip():
+                self.peilv['sgailv']= float(data.strip())
+            if self.tdIndex == 7 and data.strip():
+                self.peilv['pgailv']= float(data.strip())
+            if self.tdIndex == 8 and data.strip() :
+                self.peilv['fgailv'] = float(data.strip())
+
 
     def handle_endtag(self, tag):
          if tag.strip() == 'tr':
